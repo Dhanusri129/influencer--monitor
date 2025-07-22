@@ -1,3 +1,4 @@
+import torch
 import streamlit as st
 from transformers import pipeline
 
@@ -15,7 +16,7 @@ def fetch_mock_posts(query):
     ]
 
 # Load summarizer
-summarizer = pipeline("summarization")
+summarizer = pipeline("summarization",model="sshleifer/distilbart-cnn-12-6")
 
 # Summarize fetched posts
 def summarize(posts):
